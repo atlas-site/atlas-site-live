@@ -22,12 +22,12 @@ collections:
         name: 'entries'
         widget: 'list'
         fields:
-          - {label: 'Item', name: 'item', widget: 'markdown', minimal: 'true'}
+          - {label: 'Item', name: 'item', widget: 'markdown', minimal: true}
           - label: 'Sub Entries'
             name: 'sub_entries'
             widget: 'list'
             fields:
-              - {label: 'Sub Item', name: 'sub_item', widget: 'markdown', minimal: 'true'}
+              - {label: 'Sub Item', name: 'sub_item', widget: 'markdown', minimal: true}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
