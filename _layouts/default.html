@@ -3,11 +3,33 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
+    <title>{{ site.data.settings.site_title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" type="text/javascript"></script>
   </head>
   <body>
-    {{ content }}
+    <header>
+      {{ site.data.settings.site_title }}
+    </header>
+    <main>
+      <div id="bio">
+        {{ site.data.settings.bio | markdownify }}
+      </div>
+      {% for post in site.posts %}
+        <section>
+          <small>{{ post.title }}</small>
+          <dl>
+            {% for entry in post.entries %}
+              <dt>{{ entry.item | markdownify }}</dt>
+              {% if entry.sub_entries %}
+                {% for sub_entry in entry.sub_entries %}
+                  <dd>{{ sub_entry.sub_item | markdownify }}</dd>
+                {% endfor %}
+              {% endif%}
+            {% endfor %}
+          </dl>
+        </section>
+      {% endfor %}
+    </main>
   </body>
 </html>
