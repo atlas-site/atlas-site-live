@@ -22,12 +22,12 @@ collections:
         name: 'entries'
         widget: 'list'
         fields:
-          - {label: 'Item', name: 'item', widget: 'markdown'}
+          - {label: 'Item', name: 'item', widget: 'markdown', minimal: 'true'}
           - label: 'Sub Entries'
             name: 'sub_entries'
             widget: 'list'
             fields:
-              - {label: 'Sub Item', name: 'sub_item', widget: 'markdown'}
+              - {label: 'Sub Item', name: 'sub_item', widget: 'markdown', minimal: 'true'}
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
@@ -41,3 +41,4 @@ collections:
           - { label: 'Site Title (for browser tab)', name: 'site_title', widget: 'string' }
           - { label: 'Favicon', name: 'favicon', widget: 'image', required: false }
           - { label: 'SEO Meta Description (search result blurb)', name: 'meta_description', widget: 'markdown' }
+          - { label: 'Bio', name: 'bio', widget: 'markdown' }
