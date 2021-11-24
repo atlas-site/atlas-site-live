@@ -4,7 +4,9 @@ backend:
 
 media_folder: 'assets/uploads'
 site_url: https://atlas-site-dev.netlify.app/
-#site_url: http://127.0.0.1:4000/
+
+# when using the default proxy server port
+local_backend: true
 
 collections:
   - name: 'content'
@@ -22,12 +24,32 @@ collections:
         name: 'entries'
         widget: 'list'
         fields:
-          - {label: 'Item', name: 'item', widget: 'markdown', minimal: true}
+          - {label: 'Item', name: 'item', widget: 'markdown', minimal: true }
           - label: 'Sub Entries'
             name: 'sub_entries'
             widget: 'list'
             fields:
-              - {label: 'Sub Item', name: 'sub_item', widget: 'markdown', minimal: true}
+              - {label: 'Sub Item', name: 'sub_item', widget: 'markdown', minimal: true }
+  - name: "files"
+    label: "Files"
+    files:
+      - label: "Files List"
+        name: "files_list"
+        file: "site/content/files.yml"
+        fields:
+          - { label: 'Section Title', name: 'title', widget: 'string' }
+          - label: 'Entries'
+            name: 'entries'
+            widget: 'list'
+            fields:
+              - {label: 'Display Text', name: 'display_text', widget: 'string', required: true }
+              - {label: 'URL', name: 'url', widget: 'string' }
+              - label: 'File'
+                name: 'file'
+                widget: 'file'
+                media_library:
+                  config:
+                    multiple: false
   - name: 'settings'
     label: 'Settings'
     delete: false # Prevent users from deleting documents in this collection
