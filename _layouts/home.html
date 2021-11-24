@@ -10,12 +10,12 @@ layout: default
     <small>{{ post.title }}</small>
     <dl>
         {% for entry in post.entries %}
-        <dt>{{ entry.item | markdownify }}</dt>
-        {% if entry.sub_entries %}
-        {% for sub_entry in entry.sub_entries %}
-        <dd>{{ sub_entry.sub_item | markdownify }}</dd>
-        {% endfor %}
-        {% endif%}
+            <dt>{{ entry.item | markdownify }}</dt>
+            {% if entry.sub_entries %}
+                {% for sub_entry in entry.sub_entries %}
+                    <dd>{{ sub_entry.sub_item | markdownify }}</dd>
+                {% endfor %}
+            {% endif%}
         {% endfor %}
     </dl>
 </section>

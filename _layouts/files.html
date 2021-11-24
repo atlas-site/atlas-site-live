@@ -1,17 +1,22 @@
 ---
 layout: default
 ---
-
  <section>
-    <small>Files {{ post.title }}</small>
+    <small>{{ site.data.files.title }}</small>
     <dl>
-      {% for entry in post.entries %}
-      <dt>{{ entry.item | markdownify }}</dt>
-      {% if entry.sub_entries %}
-      {% for sub_entry in entry.sub_entries %}
-      <dd>{{ sub_entry.sub_item | markdownify }}</dd>
-      {% endfor %}
-      {% endif%}
+      {% for entry in site.data.files.entries %}
+        {% if entry.url %}
+          {% assign link = entry.url %}
+        {% endif %}
+        {% if entry.file %}
+          {% assign link =  entry.file | prepend:site.url %}
+        {% endif %}
+        {% if link != "" %}
+          <dt><a href="{{ link }}" target="_blank">{{ entry.display_text }}</a></dt>
+          {% assign link = "" %}
+        {% else %}
+          <dt>{{ entry.display_text }}</dt>
+        {% endif %}
       {% endfor %}
     </dl>
   </section>
