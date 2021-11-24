@@ -43,10 +43,11 @@ collections:
             widget: 'list'
             fields:
               - {label: 'Display Text', name: 'display_text', widget: 'string', required: true }
-              - {label: 'URL', name: 'url', widget: 'string' }
+              - {label: 'URL', name: 'url', widget: 'string', required: false }
               - label: 'File'
                 name: 'file'
                 widget: 'file'
+                required: false
                 media_library:
                   config:
                     multiple: false
