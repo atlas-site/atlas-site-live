@@ -30,12 +30,12 @@ collections:
             widget: 'list'
             fields:
               - {label: 'Sub Item', name: 'sub_item', widget: 'markdown', minimal: true }
-  - name: "files"
-    label: "Files"
+  - name: 'files'
+    label: 'Files'
     files:
-      - label: "Files List"
-        name: "files_list"
-        file: "site/content/files.yml"
+      - label: 'Files List'
+        name: 'files_list'
+        file: '_data/files.yml'
         fields:
           - { label: 'Section Title', name: 'title', widget: 'string' }
           - label: 'Entries'
