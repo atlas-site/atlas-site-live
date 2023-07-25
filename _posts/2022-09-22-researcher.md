@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Researcher
-date: 2021-11-10T14:20:34.983Z
+date: 2021-11-11T00:05:27.097Z
 entries:
   - item: R﻿oy Lichtenstein Catalogue Raisonné
 ---
